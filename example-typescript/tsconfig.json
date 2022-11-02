@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "sourceMap": false,
+    "lib": [],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "target": "es2017",
+    "strict": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
+    "outDir": "./dist",
+    "paths": {}
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
