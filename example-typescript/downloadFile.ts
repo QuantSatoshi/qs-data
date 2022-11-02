@@ -1,5 +1,4 @@
-import { getDay } from "./utils/gzReader";
-const http = require("http"); // or 'https' for https:// URLs
+import { getDay, GzReader } from "./utils/gzReader";
 const fs = require("fs");
 const mkdirp = require("mkdirp");
 import axios from "axios";
@@ -21,8 +20,8 @@ async function downloadOne(
   await mkdirp(dataPrefix + "/" + `${channel}/${exchange}`);
   const outputFileFullPath = dataPrefix + "/" + outputFileName;
   if (fs.existsSync(outputFileFullPath)) {
-    console.log(`skip file ${outputFileName}`);
-    return;
+    console.log(`skip downloading existing file ${outputFileName}`);
+    return outputFileFullPath;
   }
   const url = `http://data.quantsatoshi.com/api/download-data`;
 
@@ -46,7 +45,7 @@ async function downloadOne(
       writer.on("close", () => {
         if (!error) {
           console.log(`download complete`, outputFileFullPath);
-          resolve(true);
+          resolve(outputFileFullPath);
         }
       });
     });
@@ -58,6 +57,13 @@ async function downloadOne(
   }
 }
 
+export async function readLocalDataFile(fileName: string, onDataRow: (row: any) => any) {
+  const reader = new GzReader(`${fileName}`);
+  await reader.readStream(data => {
+    return onDataRow(data);
+  });
+}
+
 async function main() {
   const channel = "tf"; // can be obstream, tf, tick
   const exchange = "binance"; // can be binance, gdax, bybit
@@ -67,7 +73,13 @@ async function main() {
   for (let ts = startTs; ts < endTs; ts += 86400000) {
     const startDate = new Date(ts).toISOString();
     console.log(`startDate`, startDate);
-    await downloadOne(startDate, channel, exchange, pair);
+    const filename = await downloadOne(startDate, channel, exchange, pair);
+    if (filename) {
+      await readLocalDataFile(filename as string, (row: any) => {
+        // Do something with the data
+        console.log(row);
+      });
+    }
   }
   process.exit(0);
 }
