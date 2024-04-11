@@ -8,7 +8,7 @@ channel:
   - tf  (trades)
   - obstream (orderbook stream)
   - ticker
-  - candle300 (5 mins candle)
+  - candle_300 (5 mins candle)
 ```
 
 ## using typescript
@@ -61,4 +61,5 @@ curl http://data.300k.xyz/data-api/get-pairs/tf/binance
 ## list dates for exchange
 ```
 curl http://data.300k.xyz/data-api/get-data-dates/tf/binance/USDT_ETH
+curl http://data.300k.xyz/data-api/get-data-dates/candle_300/binance_fx/USD_ETH_perpetual_swap
 ```
