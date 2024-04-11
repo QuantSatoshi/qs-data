@@ -24,3 +24,41 @@ cd example-python
 pip install requests
 ACCESS_KEY=[your access key] python downloadFile.py 
 ```
+## list of exchanges
+```
+"binance",
+"binance_coin",
+"binance_fx",
+"binance_fx_coin",
+"bitfinex",
+"bitmex_fx",
+"bitstamp",
+"bittrex",
+"bybit",
+"bybit_fx",
+"coinbase_fx",
+"coinsbit",
+"deribit",
+"dgax",
+"fatbtc",
+"gdax",
+"hbdm_fx",
+"huobi",
+"huobi_fx",
+"itbit",
+"loopring",
+"okcoin_fx",
+"okex_spot",
+"okex_swap_fx",
+"phemex"
+```
+
+## list of pairs per exchange
+```
+curl http://data.300k.xyz/data-api/get-pairs/tf/binance
+```
+
+## list dates for exchange
+```
+curl http://data.300k.xyz/data-api/get-data-dates/tf/binance/USDT_ETH
+```
