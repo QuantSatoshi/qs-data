@@ -3,6 +3,14 @@
 ```
 url is http://data.quantsatoshi.com/api/download-data?exchange=binance&pair=BUSD_BTC&startDate=2022-02-04&channel=tf&accessKey=[your access key]
 ```
+```
+channel: 
+  - tf  (trades)
+  - obstream (orderbook stream)
+  - ticker
+  - candle300 (5 mins candle)
+```
+
 ## using typescript
 ```
 cd example-typescript
