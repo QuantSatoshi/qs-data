@@ -70,7 +70,7 @@ curl http://data.300k.xyz/data-api/get-data-dates/candle_300/binance_fx/USD_ETH_
 channel=tf  trades
 [1713228662938,0,63187.5,0.002,304,1713228662634]
 timestamp received, side, price, amount, pairCode(ignore), timestamp event
-side: 1: taker is buy, 0: taker is sell
+side: 0: taker is buy (up tick), 1: taker is sell (down tick)
 ```
 
 ```
