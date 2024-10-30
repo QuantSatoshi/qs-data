@@ -1,7 +1,7 @@
 
 ## download raw qs data
 ```
-url is http://data.quantsatoshi.com/api/download-data?exchange=binance&pair=BUSD_BTC&startDate=2022-02-04&channel=tf&accessKey=[your access key]
+url is http://data.quantsatoshi.com/api/download-data?exchange=binance&pair=USDT_BTC&startDate=2022-02-04&channel=tf&accessKey=[your access key]
 ```
 ```
 channel: 
