@@ -6,9 +6,14 @@ url is http://data.quantsatoshi.com/api/download-data?exchange=binance&pair=USDT
 ```
 channel: 
   - tf  (trades)
+  - tfa (aggregate trades)
   - obstream (orderbook stream)
   - tick
+  - candle_60
   - candle_300 (5 mins candle)
+  - funding
+  - tick5s
+  - tickchange
 ```
 
 ## using typescript
