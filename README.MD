@@ -56,6 +56,7 @@ ACCESS_KEY=[your access key] python downloadFile.py
 "okex_spot",
 "okex_swap_fx",
 "phemex"
+"stock"
 ```
 
 ## list of pairs per exchange
