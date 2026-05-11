@@ -60,13 +60,13 @@ ACCESS_KEY=[your access key] python downloadFile.py
 
 ## list of pairs per exchange
 ```
-curl http://data.300k.xyz/data-api/get-pairs/tf/binance
+curl http://data.quantsatoshi.com/data-api/get-pairs/tf/binance
 ```
 
 ## list dates for exchange
 ```
-curl http://data.300k.xyz/data-api/get-data-dates/tf/binance/USDT_ETH
-curl http://data.300k.xyz/data-api/get-data-dates/candle_300/binance_fx/USD_ETH_perpetual_swap
+curl http://data.quantsatoshi.com/data-api/get-data-dates/tf/binance/USDT_ETH
+curl http://data.quantsatoshi.com/data-api/get-data-dates/candle_300/binance_fx/USD_ETH_perpetual_swap
 ```
 
 ## data format
